@@ -38,7 +38,9 @@ def coffee():
     if request.method == 'GET':
         return jsonify({'message': 'Hello World!'})
     if request.method == 'POST':
-        return jsonify({'message': 'Posted!'})
+        json_data = flask.request.json
+        aroma = json_data.get("aroma")
+        return jsonify({'message': aroma})
         # json_data = flask.request.json
         # aroma = json_data["aroma"]
         # acid = json_data["acid"]
