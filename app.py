@@ -34,6 +34,8 @@ cosine_sim_df = pd.DataFrame(cosine_sim, index=labelling['name'], columns=labell
 
 @app.route('/', methods=['GET', 'POST'])
 def coffee():
+    if request.method == 'GET':
+        return jsonify({'message': 'Hello World!'})
     if request.method == 'POST':
         aroma = request.json['aroma']
         acid = request.json['acid']
