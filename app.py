@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import flask
 from sklearn import svm
 from flask import Flask, request, jsonify
 from sklearn.metrics.pairwise import cosine_similarity
@@ -37,11 +38,12 @@ def coffee():
     if request.method == 'GET':
         return jsonify({'message': 'Hello World!'})
     if request.method == 'POST':
-        aroma = request.json['aroma']
-        acid = request.json['acid']
-        body = request.json['body']
-        flavor = request.json['flavor']
-        aftertaste = request.json['aftertaste']
+        json_data = flask.request.json
+        aroma = json_data["aroma"]
+        acid = json_data["acid"]
+        body = json_data["body"]
+        flavor = json_data["flavor"]
+        aftertaste = json_data["aftertaste"]
         float_features = [aroma, acid, body, flavor, aftertaste]
         # return(float_features)
         features = [np.array(float_features)]
