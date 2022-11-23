@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from sklearn import svm
+from sklearn.neighbors import KNeighborsClassifier
 from flask import Flask, request, jsonify
 from sklearn.metrics.pairwise import cosine_similarity
 import joblib
