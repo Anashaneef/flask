@@ -5,6 +5,7 @@ from flask import Flask, request, jsonify
 from sklearn.metrics.pairwise import cosine_similarity
 import joblib
 from flask_cors import CORS
+import os
 
 
 app = Flask(__name__)
