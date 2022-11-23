@@ -37,11 +37,11 @@ def coffee():
     if request.method == 'GET':
         return jsonify({'message': 'Hello World!'})
     if request.method == 'POST':
-        aroma = request.json['aroma']
-        acid = request.json['acid']
-        body = request.json['body']
-        flavor = request.json['flavor']
-        aftertaste = request.json['aftertaste']
+        aroma = request.get_json['aroma']
+        acid = request.get_json['acid']
+        body = request.get_json['body']
+        flavor = request.get_json['flavor']
+        aftertaste = request.get_json['aftertaste']
         float_features = [aroma, acid, body, flavor, aftertaste]
         # return(float_features)
         features = [np.array(float_features)]
