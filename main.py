@@ -34,7 +34,7 @@ cosine_sim_df = pd.DataFrame(cosine_sim, index=labelling['name'], columns=labell
 
 @app.route('/')
 def hello_world():
-    return 'Cek'
+    return 'Deployed!'
 
 @app.route('/predict', methods=['POST'])
 def predict():
